@@ -23,4 +23,11 @@ Next_Btn.addEventListener("click", () => {
   }
 });
 
-Flip_Btn.addEventListener("click", () => {});
+Flip_Btn.addEventListener("click", () => {
+  Meaning_card[0].classList.toggle("hidden");
+  // if (Meaning_card[0].style.display === "none") {
+  //   Meaning_card[0].style.display === "block";
+  // } else {
+  //   Meaning_card[0].style.dislay === "none";
+  // }
+});
