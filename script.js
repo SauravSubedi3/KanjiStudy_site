@@ -10,9 +10,9 @@ let Kanji_card = document.getElementsByClassName("kanji-card");
 let Meaning_card = document.getElementsByClassName("meaning-card");
 let Next_Btn = document.getElementsByClassName("btn_next")[0];
 let Flip_Btn = document.getElementsByClassName("btn_flip")[0];
-let currentIndex = 0;
 
 Next_Btn.addEventListener("click", () => {
+  let currentIndex = 0;
   Kanji_card[0].innerHTML = flashcards[currentIndex].kanji;
   Meaning_card[0].innerHTML = flashcards[currentIndex].meaning;
 
@@ -21,6 +21,7 @@ Next_Btn.addEventListener("click", () => {
   } else {
     currentIndex += 1;
   }
+  Meaning_card[0].classList.add("hidden");
 });
 
 Flip_Btn.addEventListener("click", () => {
