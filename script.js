@@ -1,34 +1,44 @@
-let flashcards = [
-  { kanji: "一", meaning: "one" },
-  { kanji: "二", meaning: "two" },
-  { kanji: "三", meaning: "three" },
-  { kanji: "四", meaning: "four" },
-  { kanji: "五", meaning: "five" },
-];
+let flashcards = [];
 
-let Kanji_card = document.getElementsByClassName("kanji-card");
-let Meaning_card = document.getElementsByClassName("meaning-card");
-let Next_Btn = document.getElementsByClassName("btn_next")[0];
-let Flip_Btn = document.getElementsByClassName("btn_flip")[0];
+const storecards = localStorage.getItem("flashcards");
+if (storecards) {
+  flashcards = JSON.parse(storecards);
+} else {
+  flashcards = [
+    { kanji: "一", meaning: "One" },
+    { kanji: "二", meaning: "Two" },
+    { kanji: "三", meaning: "Three" },
+    { kanji: "四", meaning: "Four" },
+    { kanji: "五", meaning: "Five" },
+  ];
+}
 
-Next_Btn.addEventListener("click", () => {
-  let currentIndex = 0;
-  Kanji_card[0].innerHTML = flashcards[currentIndex].kanji;
-  Meaning_card[0].innerHTML = flashcards[currentIndex].meaning;
+Math.floor(Math.random() * flashcards.length);
 
-  if (currentIndex >= flashcards.length - 1) {
-    currentIndex = 0;
-  } else {
-    currentIndex += 1;
-  }
-  Meaning_card[0].classList.add("hidden");
-});
+let currentIndex = 0;
 
-Flip_Btn.addEventListener("click", () => {
-  Meaning_card[0].classList.toggle("hidden");
-  // if (Meaning_card[0].style.display === "none") {
-  //   Meaning_card[0].style.display === "block";
-  // } else {
-  //   Meaning_card[0].style.dislay === "none";
-  // }
-});
+const KanjiDiv = document.getElementById("kanji");
+const MeaningDiv = document.getElementById("meaning");
+const FlipBtn = document.getElementById("flip");
+const NextBtn = document.getElementById("next");
+const ShuffleBtn = document.getElementById("shuffle");
+const AddBtn = document.getElementById("add-btn");
+const NewKanjiInput = document.getElementById("new-kanji");
+const NewMeaningInput = document.getElementById("new-meaning");
+const ResetBtn = document.getElementById("reset-btn");
+
+function showcard(index) {
+  const card = flashcards[index];
+  KanjiDiv.textContent = card.kanji;
+  MeaningDiv.textContent = card.meaning;
+  MeaningDiv.classList.add("hidden");
+}
+FlipBtn.onclick = () => {
+  // KanjiDiv.classList.toggle("hidden");
+  MeaningDiv.classList.toggle("hidden");
+};
+
+NextBtn.onclick = () => {
+  currentIndex = (currentIndex + 1) % flashcards.length; // suppose you're at 4, 4+1%5 = 0 so from first
+  showcard(currentIndex);
+};

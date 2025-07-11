@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>KanjiFlashCards</title>
+    <title>Kanji Flashcards</title>
 </head>
 
 <body>
-    <h1 class="heading">🎇DailyKanjis</h1>
-    <div class="box">
-        <div class="kanji-card"></div>
-        <div class="meaning-card hidden"></div>
+    <h1>🎇 Daily Kanjis</h1>
+    <div id="card" class="card">
+        <div id="kanji" class="kanji">日</div>
+        <div id="meaning" class="hidden">day|sun</div>
     </div>
     <div class="btn">
-        <button class="btn_flip">Flip</button>
-        <button class="btn_next">Next</button>
-
+        <button id="flip">Flip</button>
+        <button id="next">Next</button>
     </div>
+
     <script src="script.js"></script>
 </body>
 
