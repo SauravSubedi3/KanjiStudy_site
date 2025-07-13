@@ -51,7 +51,3 @@ RandomBtn.onclick = () => {
   currentIndex = newIndex;
   showcard(newIndex);
 };
-
-currentIndex = flashcards.length - 1;
-
-showcard(currentIndex);
