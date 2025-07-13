@@ -21,7 +21,7 @@ const KanjiDiv = document.getElementById("kanji");
 const MeaningDiv = document.getElementById("meaning");
 const FlipBtn = document.getElementById("flip");
 const NextBtn = document.getElementById("next");
-const RandomBtn = document.getElementById("Random");
+const RandomBtn = document.getElementById("random");
 const AddBtn = document.getElementById("add-btn");
 const NewKanjiInput = document.getElementById("new-kanji");
 const NewMeaningInput = document.getElementById("new-meaning");
@@ -42,3 +42,16 @@ NextBtn.onclick = () => {
   currentIndex = (currentIndex + 1) % flashcards.length; // suppose you're at 4, 4+1%5 = 0 so from first
   showcard(currentIndex);
 };
+
+RandomBtn.onclick = () => {
+  let newIndex = currentIndex;
+  while (newIndex === currentIndex) {
+    newIndex = Math.floor(Math.random() * flashcards.length);
+  }
+  currentIndex = newIndex;
+  showcard(newIndex);
+};
+
+currentIndex = flashcards.length - 1;
+
+showcard(currentIndex);
