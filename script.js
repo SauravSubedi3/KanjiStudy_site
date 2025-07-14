@@ -51,3 +51,23 @@ RandomBtn.onclick = () => {
   currentIndex = newIndex;
   showcard(newIndex);
 };
+AddBtn.onclick = () => {
+  const newKanji = NewKanjiInput.value.trim();
+  const newMeaning = NewMeaningInput.value.trim();
+
+  if (newKanji && newMeaning) {
+    // add it to flashcards
+    flashcards.push({ kanji: newKanji, meaning: newMeaning });
+    currentIndex = flashcards.length - 1;
+    showcard(currentIndex);
+    NewKanjiInput.value = "";
+    NewMeaningInput.value = "";
+    localStorage.setItem("flashcards", JSON.stringify(flashcards));
+  } else {
+    alert("Please fill in both fields!");
+  }
+};
+
+currentIndex = flashcards.length - 1;
+
+showcard(currentIndex);
