@@ -67,7 +67,13 @@ AddBtn.onclick = () => {
     alert("Please fill in both fields!");
   }
 };
-
+ResetBtn.onclick = () => {
+  const ConformReset = confirm("Do you really want to delete the data?");
+  if (ConformReset) {
+    localStorage.removeItem("flashcards");
+    location.reload(); //refresh
+  }
+};
 currentIndex = flashcards.length - 1;
 
 showcard(currentIndex);
