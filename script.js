@@ -71,7 +71,7 @@ ResetBtn.onclick = () => {
   const ConformReset = confirm("Do you really want to delete the data?");
   if (ConformReset) {
     localStorage.removeItem("flashcards");
-    location.reload(); //refresh
+    location.reload(); //refresh to reload
   }
 };
 currentIndex = flashcards.length - 1;
