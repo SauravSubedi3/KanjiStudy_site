@@ -1,16 +1,10 @@
-let flashcards = [];
+let flashcards = defaultFlashcards;
 
 const storecards = localStorage.getItem("flashcards");
 if (storecards) {
   flashcards = JSON.parse(storecards);
 } else {
-  flashcards = [
-    { kanji: "一", meaning: "One" },
-    { kanji: "二", meaning: "Two" },
-    { kanji: "三", meaning: "Three" },
-    { kanji: "四", meaning: "Four" },
-    { kanji: "五", meaning: "Five" },
-  ];
+  flashcards = defaultFlashcards;
 }
 
 Math.floor(Math.random() * flashcards.length);
