@@ -4,4 +4,5 @@ const defaultFlashcards = [
   { kanji: "三", meaning: "Three" },
   { kanji: "四", meaning: "Four" },
   { kanji: "五", meaning: "Five" },
+  { kanji: "六", meaning: "Six" },
 ];
