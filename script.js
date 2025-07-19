@@ -1,11 +1,16 @@
 let flashcards = defaultFlashcards;
 
-const storecards = localStorage.getItem("flashcards");
-if (storecards) {
-  flashcards = JSON.parse(storecards);
-} else {
-  flashcards = defaultFlashcards;
-}
+fetch("EX_kanji.json")
+  .then((response) => response.json())
+  .then((data) => {
+    const storecards = localStorage.getItem("flashcards");
+    flashcards = storecards ? JSON.parse(storecards) : data;
+    currentIndex = flashcards.length - 1;
+    showcard(currentIndex);
+  })
+  .catch((err) => {
+    console.error("Failed to kanji data", err);
+  });
 
 Math.floor(Math.random() * flashcards.length);
 
