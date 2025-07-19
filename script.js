@@ -25,9 +25,10 @@ const AddBtn = document.getElementById("add-btn");
 const NewKanjiInput = document.getElementById("new-kanji");
 const NewMeaningInput = document.getElementById("new-meaning");
 const ResetBtn = document.getElementById("reset-btn");
-
+const keys = object.keys(data);
+const object = json.parse(data);
 function showcard(index) {
-  const card = flashcards[index];
+  const card = data[index];
   KanjiDiv.textContent = card.kanji;
   MeaningDiv.textContent = card.meaning;
   MeaningDiv.classList.add("hidden");
