@@ -11,22 +11,21 @@
 <body>
     <h1>🎇 Daily Kanjis</h1>
     <div id="card" class="card">
-        <div id="kanji" class="kanji">日</div>
-        <div id="meaning" class="hidden">day|sun</div>
+        <div id="kanji" class="kanji"></div>
+        <div id="meaning" class="hidden"></div> <!-- Will be revealed on flip -->
     </div>
+
     <div class="btn">
+        <button id="prev">Prev</button>
         <button id="flip">Flip</button>
         <button id="next">Next</button>
-        <button id="random">Random</button>
     </div>
-    <div class="add-form">
-        <h2>Add New Kanji</h2>
-        <div>
-            <input type="text" id="new-kanji" placeholder="漢字（かんじ）">
-            <input type="text" id="new-meaning" placeholder="Meaning">
-            <button id="add-btn">Add</button>
-            <button id="reset-btn">Reset Flashcards</button>
-        </div>
+    <div id="info" class="hidden">
+        <div id="meanings"></div>
+        <div id="readings_on"></div>
+        <div id="readings_kun"></div>
+        <div id="stroke_count"></div>
+        <div id="jlpt"></div>
     </div>
 
     <script src="kanjiData.js"></script>
