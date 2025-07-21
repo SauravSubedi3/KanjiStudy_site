@@ -13,7 +13,7 @@ const ReadingsKun = document.getElementById("readings_kun");
 const StrokeCount = document.getElementById("stroke_count");
 const Jlpt = document.getElementById("jlpt");
 
-// Load JSON
+// JSON
 fetch("Kanji.json")
   .then((response) => response.json())
   .then((data) => {
