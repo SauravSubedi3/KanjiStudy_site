@@ -34,7 +34,7 @@ fetch("Kanji.json")
     console.error("Failed to load kanji data", err);
   });
 
-//flashcard
+//flashcard logic
 function showcard(index) {
   const card = flashcards[index];
   KanjiDiv.textContent = card.kanji;
